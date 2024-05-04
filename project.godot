@@ -17,16 +17,17 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+StateTracker="*res://Scripts/Autoloads/StateTracker.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={
-"timeline": "res://Dialogic/timeline.dtl"
+directories/dch_directory={
+"unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
-layout/style_list=[]
-layout/default_style="Default"
+directories/dtl_directory={}
+layout/style_list=["res://New_File.tres"]
+layout/default_style="res://New_File.tres"
 
 [dotnet]
 
