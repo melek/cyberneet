@@ -1,5 +1,8 @@
 extends Node
 
+# Flags
+var pause_movement := false
+
 # Emails / Messages / Inbox
 var inbox: Array = [
 	{

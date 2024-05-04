@@ -14,4 +14,4 @@ func _input(e):
 	if e is InputEventKey:
 		if e.keycode == KEY_TAB and e.pressed:
 			$Control.visible = !$Control.visible
-		
+			StateTracker.pause_movement = $Control.visible

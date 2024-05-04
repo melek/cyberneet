@@ -26,7 +26,7 @@ func faceDirection(direction):
 
 
 func _input(event):
-	if Input.is_action_just_pressed("LeftMouse"):
+	if Input.is_action_just_pressed("LeftMouse") and !StateTracker.pause_movement:
 		var camera = get_tree().get_nodes_in_group("Camera")[0]
 		var mousePos = get_viewport().get_mouse_position()
 		var rayLength = 100
