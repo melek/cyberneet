@@ -4,46 +4,18 @@ extends Node
 var pause_movement := false
 
 # Emails / Messages / Inbox
-var inbox: Array = [
-	{
-		"read": false,
-		"from": "Mom",
-		"subject": "Checking in",
-		"message": "You okay sweety?"
-	}
-]
+var inbox: Array[Dictionary] = []
 
-func add_message(from, subject, msg, read : bool = false):
-	inbox.append({
-		"read": read,
-		"from": from,
-		"subject": subject,
-		"message": msg
-	})
-
+func add_email(new_email: Dictionary):
+	inbox.push_front(new_email)
+	
 # Jobs
 enum job_status {OPEN, COMPLETED, FAILED}
 
-var jobs: Array = [
-	{
-		"difficulty": 0,
-		"reward": 500,
-		"client": "Mr. Johnson",
-		"job_name": "Undisclosed CS",
-		"description": "Mr. Johnson has a docket with requirements for a cybersecurity action. Discretion is required.",
-		"status": job_status.OPEN
-	}
-]
+var jobs: Array[Dictionary] = []
 
-func add_job(difficulty: int, reward, client, job_name, description, status = job_status.OPEN):
-	inbox.append({
-		"difficulty": difficulty,
-		"reward": reward,
-		"client": client,
-		"job_name": job_name,
-		"description": description,
-		"status": status
-	})
+func add_job(new_job : Dictionary):
+	jobs.push_front(new_job)
 
 # Notes
 var notes: String = ""

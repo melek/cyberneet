@@ -329,6 +329,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = SubResource("Theme_s85ge")
 script = ExtResource("1_o20j0")
 
@@ -424,6 +425,7 @@ You didn't come through.
 
 Watch yourself."
 editable = false
+scroll_smooth = true
 
 [node name="Jobs" type="Control" parent="Panel"]
 visible = false
@@ -433,7 +435,7 @@ offset_top = 15.0
 offset_right = 772.0
 offset_bottom = 352.0
 
-[node name="jobs" type="VBoxContainer" parent="Panel/Jobs"]
+[node name="Listings" type="VBoxContainer" parent="Panel/Jobs"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -444,76 +446,76 @@ offset_bottom = -27.0
 grow_vertical = 2
 theme = SubResource("Theme_egumy")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/Jobs/jobs"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/Jobs/Listings"]
 layout_mode = 2
 focus_mode = 1
 
-[node name="Label2" type="Label" parent="Panel/Jobs/jobs/HBoxContainer2"]
+[node name="Label2" type="Label" parent="Panel/Jobs/Listings/HBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 text = "▓"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/Jobs/jobs/HBoxContainer2"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/Jobs/Listings/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Data Lift"
 fit_content = true
 
-[node name="Label" type="Label" parent="Panel/Jobs/jobs/HBoxContainer2"]
+[node name="Label" type="Label" parent="Panel/Jobs/Listings/HBoxContainer2"]
 layout_mode = 2
 text = "$"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/Jobs/jobs"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/Jobs/Listings"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="Panel/Jobs/jobs/HBoxContainer4"]
+[node name="Label2" type="Label" parent="Panel/Jobs/Listings/HBoxContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 text = "▓"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/Jobs/jobs/HBoxContainer4"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/Jobs/Listings/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Delivery"
 fit_content = true
 
-[node name="Label" type="Label" parent="Panel/Jobs/jobs/HBoxContainer4"]
+[node name="Label" type="Label" parent="Panel/Jobs/Listings/HBoxContainer4"]
 layout_mode = 2
 text = "$$"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/Jobs/jobs"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/Jobs/Listings"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="Panel/Jobs/jobs/HBoxContainer3"]
+[node name="Label2" type="Label" parent="Panel/Jobs/Listings/HBoxContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "▓"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/Jobs/jobs/HBoxContainer3"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/Jobs/Listings/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "????"
 fit_content = true
 
-[node name="Label" type="Label" parent="Panel/Jobs/jobs/HBoxContainer3"]
+[node name="Label" type="Label" parent="Panel/Jobs/Listings/HBoxContainer3"]
 layout_mode = 2
 text = "$$$"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Jobs/jobs"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Jobs/Listings"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="Panel/Jobs/jobs/HBoxContainer"]
+[node name="Label2" type="Label" parent="Panel/Jobs/Listings/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 text = "▓"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/Jobs/jobs/HBoxContainer"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/Jobs/Listings/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "DDoS on NuTEK"
 fit_content = true
 
-[node name="Label" type="Label" parent="Panel/Jobs/jobs/HBoxContainer"]
+[node name="Label" type="Label" parent="Panel/Jobs/Listings/HBoxContainer"]
 layout_mode = 2
 text = "$"
 
@@ -532,6 +534,8 @@ offset_right = 607.0
 offset_bottom = 278.0
 text = "Discretion is less important than results."
 editable = false
+wrap_mode = 1
+scroll_smooth = true
 
 [node name="Notes" type="Panel" parent="Panel"]
 visible = false
@@ -552,7 +556,7 @@ wrap_mode = 1
 scroll_smooth = true
 gutters_draw_line_numbers = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CRT Overlay Effect" type="ColorRect" parent="."]
 modulate = Color(0.137255, 0.403922, 1, 1)
 show_behind_parent = true
 material = SubResource("ShaderMaterial_63e5t")
@@ -563,9 +567,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
 
 [connection signal="toggled" from="Panel/Menu/InboxButton" to="." method="_on_inbox_button_toggled"]
 [connection signal="toggled" from="Panel/Menu/JobsButton" to="." method="_on_jobs_button_toggled"]
