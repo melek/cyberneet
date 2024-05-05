@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c07gaoi61b1fb"]
+[gd_scene load_steps=3 format=3 uid="uid://c07gaoi61b1fb"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_epjnu"]
+[ext_resource type="PackedScene" uid="uid://d1io0yrsuhoke" path="res://Scenes/PC UI/pc.tscn" id="2_c2urg"]
 
 [node name="Room" type="Control"]
 layout_mode = 3
@@ -46,5 +47,14 @@ text = "Skip"
 layout_mode = 2
 text = "Get Cash"
 
+[node name="TriggerUI" type="Button" parent="Actions"]
+layout_mode = 2
+text = "Toggle UI"
+
+[node name="Control" parent="." instance=ExtResource("2_c2urg")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="Actions/Skip" to="." method="_on_skip_pressed"]
 [connection signal="pressed" from="Actions/GetMoney" to="." method="_on_get_money_pressed"]
+[connection signal="pressed" from="Actions/TriggerUI" to="." method="_on_trigger_ui_pressed"]

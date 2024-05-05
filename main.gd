@@ -22,6 +22,11 @@ func _ready():
 func _process(delta):
 	pass
 	
+func _input(e):
+	if e is InputEventKey:
+		if e.is_pressed() and e.keycode == KEY_TAB:
+			_on_trigger_ui_pressed()
+		
 func get_time_of_day():
 	if   actions >= 7: return "Morning"
 	elif actions >= 4: return "Afternoon"
@@ -56,3 +61,6 @@ func _on_get_money_pressed():
 func _on_skip_pressed():
 	start_action(1)
 	complete_action()
+
+func _on_trigger_ui_pressed():
+	$Control.visible = !$Control.visible
